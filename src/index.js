@@ -4,9 +4,13 @@
 module.exports = function towelSort (matrix) {
   let unpack = [];
    matrix.forEach ((value, index) => {
- unpack = unpack.concat(...matrix[index])
-})
-function ret(a, b){ return a - b};
-unpack.sort(ret)
+  
+    if (index % 2)
+ { unpack = unpack.concat(...matrix[index].reverse())}
+ 
+ else { unpack = unpack.concat(...matrix[index])
+  }
+ })
+
   return unpack;
 }
